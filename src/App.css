@@ -1,38 +1,149 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  color: #222;
+}
+
+.page {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 35px;
+
+  background: white;
+  border-radius: 15px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Головне меню */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.menu a {
+  display: block;
+  padding: 15px;
+
+  background: #2563eb;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Посилання */
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 2;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Найвідоміша пам'ятка */
+
+.landmark {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.landmark p {
+  max-width: 700px;
+  margin: 15px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.landmark-image {
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  max-height: 450px;
+
+  object-fit: cover;
+
+  margin: 20px auto;
+
+  border-radius: 12px;
+}
+
+/* Фотографії */
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+
+  margin-top: 30px;
+}
+
+.photo-card {
+  background: #f3f4f6;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 250px;
+
+  object-fit: cover;
+}
+
+.photo-card h2 {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Телефон */
+
+@media (max-width: 600px) {
+  .page {
+    width: 95%;
+    padding: 20px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .photos {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 28px;
   }
 }
