@@ -1,20 +1,37 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Button, Card, Typography, Space, Image } from "antd";
 import "./App.css";
+
+const { Title, Paragraph } = Typography;
 
 function Home() {
   return (
     <div className="page">
-      <h1>🏙️ Моє місто — Рівне</h1>
+      <Title level={1}>🏙️ Моє місто — Рівне</Title>
 
-      <p>
+      <Paragraph>
         Ласкаво просимо на сайт, присвячений моєму рідному місту!
-      </p>
+      </Paragraph>
 
-      <div className="menu">
-        <Link to="/city">Інформація про місто</Link>
-        <Link to="/landmark">Найвідоміша пам'ятка</Link>
-        <Link to="/photos">Фотографії міста</Link>
-      </div>
+      <Space direction="vertical" size="middle" className="menu">
+        <Link to="/city">
+          <Button type="primary" size="large" block>
+            Інформація про місто
+          </Button>
+        </Link>
+
+        <Link to="/landmark">
+          <Button type="primary" size="large" block>
+            Найвідоміша пам'ятка
+          </Button>
+        </Link>
+
+        <Link to="/photos">
+          <Button type="primary" size="large" block>
+            Фотографії міста
+          </Button>
+        </Link>
+      </Space>
     </div>
   );
 }
@@ -22,24 +39,26 @@ function Home() {
 function City() {
   return (
     <div className="page">
-      <h1>🏙️ Рівне</h1>
+      <Title level={1}>🏙️ Рівне</Title>
 
-      <p>
+      <Paragraph>
         Рівне — місто на заході України та адміністративний
         центр Рівненської області.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph>
         Місто розташоване на річці Устя. Рівне є важливим
         культурним, освітнім та економічним центром області.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph>
         У місті є багато парків, музеїв, пам'ятників та
         цікавих місць для відпочинку.
-      </p>
+      </Paragraph>
 
-      <Link to="/">← На головну</Link>
+      <Link to="/">
+        <Button>← На головну</Button>
+      </Link>
     </div>
   );
 }
@@ -47,30 +66,32 @@ function City() {
 function Landmark() {
   return (
     <div className="page landmark">
-      <h1>🦁 Рівненський зоопарк</h1>
+      <Title level={1}>🦁 Рівненський зоопарк</Title>
 
-      <img
+      <Image
         className="landmark-image"
         src="/zoo.jpg"
         alt="Рівненський зоопарк"
       />
 
-      <p>
+      <Paragraph>
         Рівненський зоопарк — одна з найвідоміших пам'яток
         та туристичних локацій міста.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph>
         На території зоопарку можна побачити багато різних
         видів тварин з усього світу.
-      </p>
+      </Paragraph>
 
-      <p>
+      <Paragraph>
         Це чудове місце для відпочинку всією родиною та
         знайомства з природою.
-      </p>
+      </Paragraph>
 
-      <Link to="/">← На головну</Link>
+      <Link to="/">
+        <Button>← На головну</Button>
+      </Link>
     </div>
   );
 }
@@ -97,19 +118,28 @@ function Photos() {
 
   return (
     <div className="page">
-      <h1>📸 Фотографії Рівного</h1>
+      <Title level={1}>📸 Фотографії Рівного</Title>
 
       <div className="photos">
         {places.map((place, index) => (
-          <div className="photo-card" key={index}>
-            <img src={place.image} alt={place.name} />
-
-            <h2>{place.name}</h2>
-          </div>
+          <Card
+            key={index}
+            className="photo-card"
+            title={place.name}
+          >
+            <Image
+              src={place.image}
+              alt={place.name}
+            />
+          </Card>
         ))}
       </div>
 
-      <Link to="/">← На головну</Link>
+      <div className="back-button">
+        <Link to="/">
+          <Button>← На головну</Button>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #eef2f7;
-  color: #222;
 }
 
 .page {
@@ -14,124 +13,62 @@ body {
   max-width: 900px;
   margin: 40px auto;
   padding: 35px;
-
   background: white;
   border-radius: 15px;
-
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-h1 {
+.page h1 {
   text-align: center;
-  color: #1e3a8a;
   margin-bottom: 25px;
 }
 
-p {
+.page p {
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* Головне меню */
-
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  width: 100%;
   margin-top: 30px;
 }
 
 .menu a {
-  display: block;
-  padding: 15px;
-
-  background: #2563eb;
-  color: white;
-
-  text-align: center;
-  text-decoration: none;
-
-  border-radius: 10px;
-
-  transition: 0.3s;
+  width: 100%;
 }
-
-.menu a:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-}
-
-/* Посилання */
-
-a {
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: bold;
-  line-height: 2;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Найвідоміша пам'ятка */
 
 .landmark {
   text-align: center;
 }
 
-.landmark p {
-  max-width: 700px;
-  margin: 15px auto;
-}
-
 .landmark-image {
   display: block;
-
   width: 100%;
   max-width: 600px;
-  max-height: 450px;
-
-  object-fit: cover;
-
   margin: 20px auto;
-
   border-radius: 12px;
 }
-
-/* Фотографії */
 
 .photos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-
   margin-top: 30px;
 }
 
 .photo-card {
-  background: #f3f4f6;
-
-  border-radius: 12px;
-  overflow: hidden;
-
   text-align: center;
 }
 
 .photo-card img {
   width: 100%;
   height: 250px;
-
   object-fit: cover;
 }
 
-.photo-card h2 {
-  font-size: 20px;
-  padding: 10px;
-  margin: 0;
+.back-button {
+  margin-top: 25px;
 }
-
-/* Телефон */
 
 @media (max-width: 600px) {
   .page {
@@ -141,9 +78,5 @@ a:hover {
 
   .photos {
     grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 28px;
   }
 }
