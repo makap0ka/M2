@@ -1,29 +1,42 @@
 import { Link } from "react-router-dom";
+import { Button, Space, Typography } from "antd";
+
+const { Title, Paragraph } = Typography;
 
 function Home() {
   return (
     <div className="page">
-      <h1>🏙️ Моє місто — Рівне</h1>
+      <Title level={1}>🏙️ Моє місто — Рівне</Title>
 
-      <p>
-        Ласкаво просимо на сайт, присвячений місту Рівне!
-      </p>
+      <Paragraph>
+        Ласкаво просимо на сайт, присвячений моєму рідному місту!
+      </Paragraph>
 
-      <div className="menu">
-        <Link to="/city">Інформація про місто</Link>
-
-        <Link to="/landmark">
-          Найвідоміша пам'ятка
+      <Space direction="vertical" size="middle" className="menu">
+        <Link to="/city">
+          <Button type="primary" size="large" block>
+            Інформація про місто
+          </Button>
         </Link>
 
-        <Link to="/places">
-          Інші пам'ятки
+        <Link to="/landmark">
+          <Button type="primary" size="large" block>
+            Найвідоміша пам'ятка
+          </Button>
         </Link>
 
         <Link to="/photos">
-          Фотографії міста
+          <Button type="primary" size="large" block>
+            Фотографії міста
+          </Button>
         </Link>
-      </div>
+
+        <Link to="/users">
+          <Button type="primary" size="large" block>
+            Користувачі, які створили цей сайт
+          </Button>
+        </Link>
+      </Space>
     </div>
   );
 }

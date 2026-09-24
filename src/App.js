@@ -1,40 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Button, Card, Typography, Space, Image } from "antd";
+import Home from "./components/Home";
+import Users from "./components/Users";
 import "./App.css";
 
 const { Title, Paragraph } = Typography;
-
-function Home() {
-  return (
-    <div className="page">
-      <Title level={1}>🏙️ Моє місто — Рівне</Title>
-
-      <Paragraph>
-        Ласкаво просимо на сайт, присвячений моєму рідному місту!
-      </Paragraph>
-
-      <Space direction="vertical" size="middle" className="menu">
-        <Link to="/city">
-          <Button type="primary" size="large" block>
-            Інформація про місто
-          </Button>
-        </Link>
-
-        <Link to="/landmark">
-          <Button type="primary" size="large" block>
-            Найвідоміша пам'ятка
-          </Button>
-        </Link>
-
-        <Link to="/photos">
-          <Button type="primary" size="large" block>
-            Фотографії міста
-          </Button>
-        </Link>
-      </Space>
-    </div>
-  );
-}
 
 function City() {
   return (
@@ -152,6 +122,7 @@ function App() {
         <Route path="/city" element={<City />} />
         <Route path="/landmark" element={<Landmark />} />
         <Route path="/photos" element={<Photos />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
     </BrowserRouter>
   );

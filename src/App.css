@@ -80,3 +80,25 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.user-card {
+  height: 100%;
+}
+
+.user-card .ant-card-cover img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.loading {
+  text-align: center;
+  margin: 40px;
+}
+
+.loading p {
+  margin-top: 15px;
+}
+
+.back-button {
+  margin-top: 25px;
+}
