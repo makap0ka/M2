@@ -1,8 +1,10 @@
+import ContactForm from "./components/ContactForm";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Button, Card, Typography, Space, Image } from "antd";
 import Home from "./components/Home";
 import Users from "./components/Users";
 import "./App.css";
+
 
 const { Title, Paragraph } = Typography;
 
@@ -123,6 +125,7 @@ function App() {
         <Route path="/landmark" element={<Landmark />} />
         <Route path="/photos" element={<Photos />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
     </BrowserRouter>
   );

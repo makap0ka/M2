@@ -36,6 +36,12 @@ function Home() {
             Користувачі, які створили цей сайт
           </Button>
         </Link>
+
+        <Link to="/contact">
+          <Button type="primary" size="large" block>
+            Форма зворотного зв'язку
+          </Button>
+        </Link>
       </Space>
     </div>
   );
